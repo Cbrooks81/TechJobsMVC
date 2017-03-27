@@ -1,0 +1,21 @@
+﻿
+<h1>@ViewBag.title</h1>
+
+<h2>@ViewBag.jobs.Count Results</h2>
+
+    @foreach (Dictionary<string, string> job in ViewBag.jobs)
+    {
+        <table class="job-listing">
+            @foreach (KeyValuePair<string, string> detail in job)
+            {
+                <tr>
+                    <td>@detail.Key: </td>
+                    <td>@detail.Value</td>
+                </tr>
+
+            }
+        </table>
+    }
+    
+
+

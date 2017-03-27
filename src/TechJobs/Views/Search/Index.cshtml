@@ -27,10 +27,18 @@
 
 <hr />
 
+
 @if (ViewBag.jobs != null)
 {
 
     <h3>@ViewBag.jobs.Count Result(s)</h3>
 
-    // TODO #2 - Loop over jobs dictionary and display all job fields 
+    <ul>
+        @foreach (KeyValuePair<string, string> job in ViewBag.jobs)
+        {
+            <li>
+                <a asp-controller="List" asp-action="Results" asp-route-column="@job.Key">@job.Value</a>
+            </li>
+        }
+    </ul> // TODO #2 - Loop over jobs dictionary and display all job fields
 }
